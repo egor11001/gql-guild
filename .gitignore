@@ -1,3 +1,6 @@
 node_modules
 **/@generated/
-@generated/
+@generated*/
+
+src/@generated
+src/@modules/**/@generated
