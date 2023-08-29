@@ -1,7 +1,13 @@
 import { createServer } from "http";
 import { useGraphQLModules } from "@envelop/graphql-modules";
 import { createYoga } from "graphql-yoga";
-import { application } from "./application";
+import * as dotenv from "dotenv";
+import dotenvExpand from "dotenv-expand";
+
+import { application } from "@/application";
+
+const env = dotenv.config();
+dotenvExpand.expand(env);
 
 const bootstrap = () => {
   const yoga = createYoga({
@@ -9,7 +15,7 @@ const bootstrap = () => {
   });
   const server = createServer(yoga);
 
-  server.listen(4000, () => {
+  server.listen(process.env.PORT, () => {
     console.log(`🚀 Server ready`);
   });
 };

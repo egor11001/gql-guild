@@ -1,4 +1,4 @@
-import { MainModule } from "./@generated/module-types";
+import { MainModule } from "@/@modules/main/@generated/module-types";
 
 export const MainResolver: MainModule.Resolvers = {
   Query: {
